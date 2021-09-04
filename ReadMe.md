@@ -17,11 +17,14 @@ consider data `bike_sharing` in the repo . Respond with your conclusions [and co
 ## Q2
 
 find all possible solutions of  system of these linear equations : 
+
 $$
 2x + 3y + 4z^2 = 23
+
 \\ y^2 - x^2 = 3
 $$
-considering that sum and difference of x,y are strictly integers . Although you could solve the equations by hand , i would like you to share a python code which uses linear algebra [and matrices to represent ] to solve the resulting system(s) of equations . 
+
+considering that sum and difference of x,y are strictly integers . Although you could solve the equations by hand , i would like you to share a python code which uses linear algebra [and matrices to represent ] to solve the resulting system(s) of equations . [ you might need to do some mathematical jugglery to obtain two systems of equations hidden in there . ]
 
 ## Q3
 
