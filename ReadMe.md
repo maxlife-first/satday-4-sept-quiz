@@ -25,7 +25,7 @@ considering that sum and difference of x,y are strictly integers . Although you 
 
 ## Q3
 
-Do weather situations affect bike renting behaviours . Show me visually . Consider columns [ temp , hum , windspeer and `cnt`]
+Do weather situations affect bike renting behaviours . Show me visually . Consider columns [ temp , hum , windspeed and `cnt`]
 
 
 
