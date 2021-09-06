@@ -34,28 +34,112 @@ data.shape
 data.head(2)
 
 
-# In[75]:
+# In[ ]:
 
 
-df1=data.loc[data["mnth"] <= 3]
+############## a ####################
 
 
-# In[76]:
+# In[103]:
 
 
-df1.head(2)
+import datetime
 
 
-# In[77]:
+# In[104]:
 
 
-df2=pd.DataFrame(data.groupby(['mnth'])["temp"].mean())
+data["dteday"]=pd.to_datetime(data["dteday"],errors="coerce")
 
 
-# In[78]:
+# In[105]:
 
 
-df2
+data.head(2)
+
+
+# In[115]:
+
+
+d_new=data[data["dteday"].dt.day<=7]
+
+
+# In[116]:
+
+
+d_first_6=d_new[d_new["mnth"]<=6]
+
+
+# In[117]:
+
+
+d_first_6.head(2)
+
+
+# In[118]:
+
+
+d_last_6=d_new[d_new["mnth"]>6]
+
+
+# In[ ]:
+
+
+######## H0: There is no significant difference between the average number of rented bikes in first 7 days of fisrt 6 months and last 6 months
+
+
+# In[119]:
+
+
+from scipy.stats import levene
+
+
+# In[121]:
+
+
+levene(d_new.loc[d_new["mnth"]<=6,'cnt'],d_new.loc[d_new["mnth"]>6,'cnt'])
+
+
+# In[ ]:
+
+
+####Since, the p-value is less than 0.05, therefore we reject the null hypothesis and conclude that there is a significant difference between the average number of rented bikes in first 7 days of fisrt 6 months and last 6 months
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+########################### b ####################
+
+
+# In[107]:
+
+
+d1=data.loc[data["mnth"] <= 3]
+
+
+# In[108]:
+
+
+d1.head(2)
+
+
+# In[109]:
+
+
+d2=pd.DataFrame(data.groupby(['mnth'])["temp"].mean())
+
+
+# In[110]:
+
+
+d2
 
 
 # In[79]:
